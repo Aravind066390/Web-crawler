@@ -83,3 +83,13 @@ crawling, keyword matching, and low-level memory management.
 The current implementation is functional for its intended experiments.
 Future improvements may include multithreaded crawling, improved HTML
 parsing, better URL deduplication, and more efficient search/ranking.
+
+
+## 👤 Author
+
+**Aravind**
+
+Computer Science Engineering student interested in C/C++, systems
+programming, networking, programming languages, and virtual machines.
+
+GitHub: [Aravind066390](https://github.com/Aravind066390)
