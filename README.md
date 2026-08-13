@@ -36,7 +36,6 @@ The main processing flow is:
 6. Display matching URLs
 
 
-## ⚙️ How It Works
 
 The crawler follows this pipeline:
 
@@ -66,3 +65,10 @@ Follow Links Recursively
      │
      ▼
 Display Relevant URLs
+
+```
+## 🧠 Custom Memory System
+
+The project also uses a custom memory abstraction through `memory.h`.
+This was developed as part of my experiments with low-level memory
+management and shared data between system components.
