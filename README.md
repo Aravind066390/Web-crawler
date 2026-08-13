@@ -19,6 +19,23 @@ The program starts from a specified website, downloads webpage content, extracts
 - Dynamic memory allocation
 - Automatic following of discovered links
 
+
+## ⚙️ How It Works
+
+The crawler starts from a seed URL and uses libcurl to retrieve webpage
+content. It extracts links from the downloaded data, evaluates them
+against the supplied search terms, and recursively follows relevant links.
+
+The main processing flow is:
+
+1. Fetch webpage using libcurl
+2. Extract URLs from the returned content
+3. Filter and evaluate links using search keywords
+4. Store candidate links
+5. Recursively crawl selected links
+6. Display matching URLs
+
+
 ## ⚙️ How It Works
 
 The crawler follows this pipeline:
