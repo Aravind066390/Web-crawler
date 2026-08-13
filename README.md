@@ -72,3 +72,14 @@ Display Relevant URLs
 The project also uses a custom memory abstraction through `memory.h`.
 This was developed as part of my experiments with low-level memory
 management and shared data between system components.
+
+
+## 🚧 Project Status
+
+This project is an experimental web crawler and search engine developed
+to explore networking, webpage retrieval, link extraction, recursive
+crawling, keyword matching, and low-level memory management.
+
+The current implementation is functional for its intended experiments.
+Future improvements may include multithreaded crawling, improved HTML
+parsing, better URL deduplication, and more efficient search/ranking.
