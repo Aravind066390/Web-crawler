@@ -20,6 +20,32 @@ The program starts from a specified website, downloads webpage content, extracts
 - Automatic following of discovered links
 
 
+## ⚙️ Crawler Architecture
+
+The crawler uses multiple processes to perform crawling in parallel.
+
+Four child processes are created using `fork()`, with each process starting from a different seed URL. This allows multiple websites to be crawled concurrently instead of relying on a single crawling process.
+
+```text
+                    Crawler
+                       │
+          ┌────────────┼────────────┐
+          │            │            │
+       Process 1    Process 2    Process 3    Process 4
+          │            │            │            │
+       Seed URL     Seed URL     Seed URL     Seed URL
+          │            │            │            │
+          └────────────┴────────────┴────────────┘
+                         │
+                    HTML processing
+                         │
+                    Content filtering
+                         │
+                    Search / indexing
+
+
+```
+
 ## ⚙️ How It Works
 
 The crawler starts from a seed URL and uses libcurl to retrieve webpage
