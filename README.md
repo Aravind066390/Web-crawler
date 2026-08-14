@@ -29,8 +29,8 @@ Four child processes are created using `fork()`, with each process starting from
 ```text
                     Crawler
                        │
-          ┌────────────┼────────────┐
-          │            │            │
+          ┌────────────┼────────────┐------------
+          │            │            │            |
        Process 1    Process 2    Process 3    Process 4
           │            │            │            │
        Seed URL     Seed URL     Seed URL     Seed URL
