@@ -21,7 +21,7 @@ for(int i=0;i<argn;i++){
 s[i]=(char *)malloc(100);
 }
 for(int i=2;i<argn;i++){
-if((strcmp(argv[i],"he"))&&(strcmp(argv[i],"she"))&&(strcmp(argv[i],"the"))&&(strcmp(argv[i],"a"))&&(strcmp(argv[i],"me"))&&(strcmp(argv[i],"my"))&&(strcmp(argv[i],"us"))&&(strcmp(argv[i],"kept"))&&(strcmp(argv[i],"and"))){
+if((strcmp(argv[i],"he"))&&(strcmp(argv[i],"she"))&&(strcmp(argv[i],"the"))&&(strcmp(argv[i],"a"))&&(strcmp(argv[i],"me"))&&(strcmp(argv[i],"my"))&&(strcmp(argv[i],"us"))&&(strcmp(argv[i],"kept"))&&(strcmp(argv[i],"and"))&&(strcmp(argv[i],"her"))){
 strcpy(s[k],argv[i]);
 k=k+1;
 }
@@ -39,6 +39,7 @@ return;
 int search_engine(char **argv,int argn,char *str){
 int g=0,j=0,enda=0;
 char *tst=data;
+int validity=0;
 for(int i=0;i<argn;i++){
 tst=data;
 while(*tst!='\0'){
@@ -47,7 +48,13 @@ break ;
 }
 /**printf("%s-----%.4s\n\n",argv[i],tst);
 sleep(1);*/
-if(!strncmp(argv[i],tst,strlen(argv[i]))){
+if(!strncmp("<h",tst,2)||!strncmp("<a",tst,2)||!strncmp("<p",tst,2)){
+validity=1;
+}
+if(!strncmp("</h",tst,3)||!strncmp("</a",tst,3)||!strncmp("</p",tst,3)){
+validity=0;
+}
+if(!strncmp(argv[i],tst,strlen(argv[i]))&&validity){
 g++;
 }
 tst++;
@@ -68,7 +75,21 @@ return 1;
 int main(int argno,char **argv){
 curl_global_init(CURL_GLOBAL_DEFAULT);
 char **s;
-char urg_name[]="https://vtu.ac.in";
+char urg_name[100];
+if(fork()){
+if(fork()){
+strcpy(urg_name,"https://vtu.ac.in");
+}else{
+strcpy(urg_name,"https://www.youtube.com");
+}
+}else{
+if(fork()){
+strcpy(urg_name,"https://www.wikipedia.org");
+}
+else{
+strcpy(urg_name,"https://data.gov");
+}
+}
 mark(urg_name,s=init(argv,argno),cost);
 clear_init(s,cost);
 curl_easy_cleanup(curl);
