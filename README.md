@@ -28,9 +28,9 @@ The current architecture separates **user interaction and configuration** from t
                     │      Manager.c       │
                     │                      │
                     │ • Input handling     │
-                    │ • Command handling  │
-                    │ • Depth control     │
-                    │ • Input validation  │
+                    │ • Command handling   │
+                    │ • Depth control      │
+                    │ • Input validation   │
                     └──────────┬───────────┘
                                │
                          launches crawler
@@ -41,10 +41,10 @@ The current architecture separates **user interaction and configuration** from t
                     │                      │
                     │ • libcurl requests   │
                     │ • HTML processing    │
-                    │ • URL extraction    │
-                    │ • Keyword matching │
-                    │ • Link filtering   │
-                    │ • Recursive crawl  │
+                    │ • URL extraction     │
+                    │ • Keyword matching   │
+                    │ • Link filtering     │
+                    │ • Recursive crawl    │
                     └──────────┬───────────┘
                                │
                                ▼
