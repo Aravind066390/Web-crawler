@@ -8,7 +8,7 @@ char data[1024*1024*2];
 char data2[1024][1024*4];
 char point_link[100][100];
 int ss=1,nk=0,jnj=0,too=0;
-int cost=0,xval=0,meta_data;
+int cost=0,xval=0,meta_data,depth_value=1;
 CURL *curl;
 size_t write_data(void *ptr,size_t a,size_t b,void *beta){
 strncat((char *)beta,(char *)ptr,a*b);
@@ -75,6 +75,7 @@ return 1;
 int main(int argno,char **argv){
 curl_global_init(CURL_GLOBAL_DEFAULT);
 char **s;
+depth_value=atoi(argv[1]);
 char urg_name[100];
 if(fork()){
 if(fork()){
@@ -136,7 +137,7 @@ ss=ss-1;
 return ;
 }
 int mark(char *s,char **ch,int sizes){
-if(nk>=ss||nk>=20){
+if(nk>=ss||nk>=(20+depth_value)){
 return 0;
 }
 curl=curl_easy_init();
@@ -177,7 +178,7 @@ data2[ss][k++]=data[j];
 }
 }
 data2[ss][k]='\0';
-if(ss<1000){
+if(ss<(1000+depth_value)){
 ss=ss+1;
 }else{
 printf("\n\n\nended");
