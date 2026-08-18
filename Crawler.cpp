@@ -198,3 +198,51 @@ mark(data2[jnj++],ch,cost);
 }
 return 0;
 }
+
+/**
+  * ================================================================
+  *                       WEB CRAWLER(keyword-based search engine)
+  *                       newexp.cpp
+  * ================================================================
+  *
+  * Description:
+  *     Experimental implementation of a web crawler and search
+  *     engine written in C/C++.
+  *
+  *     The program is designed to fetch webpages, process their
+  *     contents, extract links, search for user-provided keywords,
+  *     and recursively discover relevant webpages.
+  *
+  * Main Features:
+  *     - Webpage retrieval using libcurl
+  *     - HTML content processing
+  *     - URL / hyperlink extraction
+  *     - Keyword-based page searching
+  *     - Recursive crawling
+  *     - Multiple crawling processes
+  *     - Dynamic memory management
+  *     - Experimental search-engine functionality
+  *
+  * File:
+  *     newexp.cpp
+  *
+  * Project:
+  *     Web-crawler
+  *
+  * Author:
+  *     Aravind
+  *
+  * Repository:
+  *     https://github.com/Aravind066390/Web-crawler
+  *
+  * Purpose:
+  *     This file is intended for experimentation and development
+  *     of new crawling, searching, URL-processing, and memory-
+  *     management techniques.
+  *
+  * Note:
+  *     This is an experimental project. The implementation may
+  *     change as new algorithms and optimizations are tested.
+  *
+  * ================================================================
+  */
